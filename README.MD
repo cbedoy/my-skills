@@ -30,7 +30,8 @@ python -m scripts.package_skill <skill-name> ./dist
 ## Skills
 
 | Skill | Domain | Description |
-|---|---|---|
+|---|---|---|---|
+| [suno-prompt-generator](./suno-prompt-generator/) | Music / AI | Convierte canciones o playlists de Spotify en prompts de estilo listos para Suno AI. Extrae género, instrumentación, mood y BPM; entrega 1-5 variaciones de style string con ideas de letra original opcionales. |
 | [guitar-riff-composer](./guitar-riff-composer/) | Music | Composes original guitar riffs with ASCII tablature, music theory context, and tone/FX suggestions. Supports any genre and player level. |
 | [kmp-engineer](./kmp-engineer/) | Mobile / KMP | Acts as a Staff/Principal Engineer specialized in Kotlin Multiplatform and Compose Multiplatform. Applies clean architecture, typed error handling, injected dispatchers, and production-ready patterns across shared and platform-specific code. |
 | [facade-floorplan-designer](./facade-floorplan-designer/) | Architecture | Diseñador conceptual de fachadas y plantas arquitectónicas para proyectos de casa propia. Traduce una descripción en lenguaje natural a alzados y planos esquemáticos SVG con proporciones razonables, incluyendo cálculo de áreas, recomendaciones de orientación solar y diseño bioclimático. |
@@ -98,3 +99,20 @@ Triggered by questions about buying property in Mexico, Infonavit credit capacit
 - Separates verified facts from estimates from advisor opinion
 
 **Reference files:** `infonavit-calc.md`, `financing-calc.md`, `analysis-framework.md`
+
+---
+
+### suno-prompt-generator
+
+Triggered when the user shares a Spotify link (track or playlist), asks to "analiza esta playlist", "genera prompts para Suno", "quiero recrear el vibe de esta canción con IA", or mentions Suno alongside a musical reference. Also triggers if the user describes a genre/mood and directly asks for a Suno prompt without a playlist.
+
+**What it does:**
+- Fetches Spotify playlist/track metadata via `web_fetch` (no login required) — reads Open Graph + visible HTML tracks
+- Extracts the "sonic fingerprint": genre, BPM range, instrumentation, mood, vocal treatment, and narrative theme
+- Generates 3-5 prompt variations for a playlist, or 1-2 for a single track
+- Each variation includes: descriptive name, style string (tags separated by commas, no artist names), and optional 2-3 line original lyric idea
+- Follows strict formatting rules: no real artist names, no third-party lyrics, tags not prose, explicit instrumental/vocal flag
+- Uses reference BPM map: organic house (100-122), melodic techno (118-126), downtempo (80-105), etc.
+- Groups by sub-cluster when a playlist mixes very different genres
+
+**Reference files:** `suno-prompt-format.md`
