@@ -27,7 +27,7 @@ Si el usuario no dio esta información, preguntar en un solo mensaje (o inferir 
 - Terraza/azotea: uso (asador, alberca, lavandería, jardín)
 
 **Estilo y construcción:**
-- Estilo deseado (contemporáneo, minimalista, colonial, industrial, mediterráneo, etc.) — si no lo sabe, ofrecer 2-3 referencias para que elija
+- Estilo deseado (contemporáneo, minimalista, colonial, industrial, mediterráneo, etc. — ver `references/architectural-styles.md`) — si no lo sabe, ofrecer 2-3 referencias para que elija
 - Tipo de construcción (block y losa tradicional, prefabricada, muros de carga) — afecta proporciones de vanos en la fachada
 
 No avanzar a generar planos hasta tener al menos: niveles a incluir, lista de espacios principales por nivel, y estilo aproximado. El resto (m² exactos, materiales) se puede asumir con un rango razonable, declarando el supuesto explícitamente.
@@ -86,6 +86,8 @@ El usuario va a querer ajustar (mover una recámara, cambiar el techo, agrandar 
 
 ## Referencias
 
+- `references/svg-template.md` — Template base y clases compartidas para todos los SVG (viewBox, tipografía, paleta de colores, marcadores)
+- `references/architectural-styles.md` — Descripción operativa de estilos arquitectónicos (contemporáneo, minimalista, colonial, industrial, mediterráneo, rústico) para guiar la elección del usuario y la generación de fachadas
 - `references/floorplan-drawing-guide.md` — Convenciones para dibujar plantas arquitectónicas en SVG (escala, muros, puertas, ventanas, acotación, etiquetas)
 - `references/facade-elevation-guide.md` — Convenciones para dibujar alzados/fachadas esquemáticos (proporción, niveles, vanos, cubiertas, zonas de material)
 - `references/climate-design-principles.md` — Principios de diseño bioclimático para clima semi-árido (Aguascalientes y similares): orientación, % de vano por fachada, sombreado, inercia térmica

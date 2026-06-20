@@ -33,6 +33,7 @@ python -m scripts.package_skill <skill-name> ./dist
 |---|---|---|
 | [guitar-riff-composer](./guitar-riff-composer/) | Music | Composes original guitar riffs with ASCII tablature, music theory context, and tone/FX suggestions. Supports any genre and player level. |
 | [kmp-engineer](./kmp-engineer/) | Mobile / KMP | Acts as a Staff/Principal Engineer specialized in Kotlin Multiplatform and Compose Multiplatform. Applies clean architecture, typed error handling, injected dispatchers, and production-ready patterns across shared and platform-specific code. |
+| [facade-floorplan-designer](./facade-floorplan-designer/) | Architecture | Diseñador conceptual de fachadas y plantas arquitectónicas para proyectos de casa propia. Traduce una descripción en lenguaje natural a alzados y planos esquemáticos SVG con proporciones razonables, incluyendo cálculo de áreas, recomendaciones de orientación solar y diseño bioclimático. |
 | [mx-real-estate-advisor](./mx-real-estate-advisor/) | Real Estate | Asesor inmobiliario y financiero especializado en México. Calcula capacidad Infonavit, compara esquemas de financiamiento, analiza zonas por plusvalía y demanda, y recomienda desarrolladoras con historial verificable. |
 
 ---
@@ -66,6 +67,22 @@ Triggered by any KMP/Compose Multiplatform question, design decision, or impleme
 - Produces ktlint and Detekt compliant code
 
 **Reference files:** `architecture.md`, `compose.md`, `testing.md`, `code-quality.md`
+
+---
+
+### facade-floorplan-designer
+
+Triggered by requests to design house facades and floor plans — descriptions of room programs, lot dimensions, architectural style, or any mention of "diseñar fachada", "planos de mi casa", "distribución de planta baja/alta", "boceto de fachada", or similar phrases in a Mexican residential construction context.
+
+**What it does:**
+- Gathers the architectural program (lot dimensions, room list per level, style, construction type)
+- Calculates and displays area tables with typical ranges and COS (ground occupancy ratio)
+- Generates SVG floor plans per level using `visualize:show_widget` following drawing conventions
+- Generates a consistent facade elevation with proper proportions, openings, roof type, and material zones
+- Provides climate-responsive design recommendations based on lot orientation
+- Supports iteration — adjusts individual levels or the facade without regenerating everything
+
+**Reference files:** `svg-template.md`, `architectural-styles.md`, `floorplan-drawing-guide.md`, `facade-elevation-guide.md`, `climate-design-principles.md`
 
 ---
 
